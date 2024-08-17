@@ -1,4 +1,5 @@
-# README## Links Úteis- [Documentação do React Navigation Stack Navigator](https://reactnavigation.org/docs/stack-navigator)
+# README## 
+Links Úteis- [Documentação do React Navigation Stack Navigator](https://reactnavigation.org/docs/stack-navigator)
 
 ## Dependências
 
