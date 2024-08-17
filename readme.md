@@ -1,13 +1,11 @@
+# README## Links Úteis- [Documentação do React Navigation Stack Navigator](https://reactnavigation.org/docs/stack-navigator)
 
-###
-**links uteis**
-    https://reactnavigation.org/docs/stack-navigator
-###
+## Dependências
 
+Para instalar as dependências necessárias, execute os seguintes comandos:
 
-###
-**DEPENDENCIAS**
-    npm install @react-navigation/native
-    npx expo install react-native-screens react-native-safe-area-context
-    npm install @react-navigation/stack
-###
+```bash
+npm install @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+npm install @react-navigation/stack
+```
