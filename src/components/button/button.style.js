@@ -3,20 +3,18 @@ import { COLORS, FONTSIZE } from "../../constants/theme";
 
 export const style = StyleSheet.create({
     container:{
-    
     },
     borderButton:{
-        borderWidth:3,
-        padding:5,
+        padding:10,
         borderRadius:5,
-        width:'50%',
-        backgroundColor:COLORS.ligh_yellow,
+        backgroundColor:COLORS.ligh_green,
+        alignItems:"center",
+        justifyContent:"center",
+        
 
     },
     textButton:{
-        textAlign:"center",
-        fontSize:FONTSIZE.md,
-
-
+        fontSize:FONTSIZE.xl,       
+        color:COLORS.ligh_yellow,
     }
 })

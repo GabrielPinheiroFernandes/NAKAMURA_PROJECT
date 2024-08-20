@@ -13,11 +13,10 @@ function Home(){
     const navigator = useNavigation();
     return <>
         <View style={style.container}>
-            <Text>Vai tomar no cu bingulinho</Text>
-            <Text>Vai tomar no cu bingulinho</Text>
-            <Text>Vai tomar no cu bingulinho</Text>
-            <Image source={icons.ratao}/>
-            <Button placeholder="BOTÃO" onClick={()=>{navigator.navigate("InsertData")}}/>
+            <Image source={icons.gps}/>
+            <Text style={style.consultaText}>CONSULTAS</Text>
+            <Text style={style.EnderecoText}>ENDEREÇO</Text>
+            <Button style={style.buttonNext} placeholder="Consultar" onClick={()=>{navigator.navigate("InsertData")}}/>
         </View>
         
     
