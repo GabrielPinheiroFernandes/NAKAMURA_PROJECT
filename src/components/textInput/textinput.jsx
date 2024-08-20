@@ -7,11 +7,10 @@ function Textinput(props){
             { props.placeholder ? (
                 <Text style={style.placeholder}>{props.placeholder}</Text>
             ) : null }
-            <TextInput style={[style.InputText]}/>
+            <TextInput style={[style.InputText]} keyboardType={props.isnum ? 'numeric' : 'default'}/>
         </View>    
     </>
 
 }
-
 
 export default Textinput;

@@ -11,6 +11,7 @@ export const style = StyleSheet.create({
         backgroundColor:COLORS.ligh_green,
         alignItems:"center",
         justifyContent:"center",
+        color:COLORS.ligh_yellow,
         
 
     },

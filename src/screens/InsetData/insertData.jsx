@@ -7,7 +7,7 @@ function InsertData(){
 
     return <>
     <View style={style.container}>
-        <Textinput placeholder="asgdadyussd"/>
+        <Textinput placeholder="asgdadyussd" isnum/>
     </View>
     </>
 };
