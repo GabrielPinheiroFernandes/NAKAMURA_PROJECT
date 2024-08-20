@@ -5,7 +5,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import Home from "../screens/Home/home";
 import InsertData from "../screens/InsetData/insertData";
 import ShowData from "../screens/showData/showData";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import { COLORS } from "../constants/theme";
 
 
