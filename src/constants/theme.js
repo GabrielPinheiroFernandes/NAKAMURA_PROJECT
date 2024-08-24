@@ -12,7 +12,7 @@ const FONTSIZE = {
     md: 16,
     lg: 22,
     xl: 32,
-    xxl: 64
+    xxl: 50
 };
 
 export  {COLORS,FONTSIZE}

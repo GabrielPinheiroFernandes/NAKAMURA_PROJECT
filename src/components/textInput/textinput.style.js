@@ -3,7 +3,9 @@ import { COLORS, FONTSIZE } from "../../constants/theme";
 
 export const style = StyleSheet.create({
     container:{
-       width:'90%'
+       width:300,
+       alignItems:"center",
+    //    borderWidth:4
     },
     InputText:{
         padding:10,
@@ -12,10 +14,11 @@ export const style = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         color:COLORS.ligh_yellow,
+        width:'90%'
         
 
     },
-    placeholder:{
+    label:{
         textAlign:"center",
         fontSize:FONTSIZE.xl,       
         color:COLORS.ligh_yellow,
