@@ -16,7 +16,7 @@ function Router(){
     
     return <>
     <NavigationContainer>
-        <Stack.Navigator initialRouteName="InsertData">
+        <Stack.Navigator initialRouteName="Home">
 
             <Stack.Screen name="Home" component={Home} options={{
                 headerShown:false,

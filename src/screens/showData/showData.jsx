@@ -8,7 +8,8 @@ import { useNavigation } from "@react-navigation/native";
 function ShowData(dados){
     
     const navigator = useNavigation();
-    const data=dados.route.params[0].data
+    const data = dados.route.params.data
+
 
     return <View style={style.container}>
        <View style={style.containerCard}>

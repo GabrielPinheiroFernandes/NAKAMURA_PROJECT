@@ -3,51 +3,57 @@ import { style } from "./insetData.style";
 import Textinput from "../../components/textInput/textinput";
 import Button from "../../components/button/button";
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-
-function InsertData(){
+function InsertData() {
     const navigation = useNavigation();
-    const [CEP,setCEP] = useState();
-    const [DADOS,setDADOS] = useState();
+    const [CEP, setCEP] = useState('');
+    const [DADOS, setDADOS] = useState(null);
 
-    async function API(cepPesq){
-        
+    async function API(cepPesq) {
         try {
-            fetch('https://apifacil.dev/api/v1/guest/cep/'+cepPesq).then((res)=>{
-                try{
-                    return res.json()
-
-                }
-                catch{
-                    console.log('algo de errado na conversão do json')
-                }
-            }).then((res)=>{
-                // console.log(res)
-                setDADOS(res)
-            })
-        }
-        catch{
-            alert('tente mais tarde')
+            const response = await fetch('https://apifacil.dev/api/v1/guest/cep/' + cepPesq);
+            const data = await response.json();
+            // console.log(data)
+            setDADOS(data);
+        } catch (error) {
+            console.error('Erro na chamada da API:', error);
         }
     }
 
+    useEffect(() => {
+        if (DADOS) {
+            // console.log('cade o erro porra',DADOS.error)
+            // console.log(DADOS)
+            if (DADOS.error === false) {
+                // console.log('passou')
+                navigation.navigate('ShowData', DADOS);
+            } else {
+                alert(`Digite corretamente o seu CEP!! Erro: ${DADOS.error}`);
+            }
+        }
+    }, [DADOS, navigation]);
 
-    return <>
+    return (
         <View style={style.container}>
             <View style={style.containerCard}>
                 <Text style={style.Tittle}>BUSCA CEP</Text>
-                <Textinput placeholder="Somente numeros" label='Digite o CEP:' isnum onChangeText={setCEP} />
-                <Button placeholder='Consultar' onClick={()=>{
-                    API(CEP);
-                    {DADOS.error = "false" ? navigation.navigate('ShowData',[DADOS]) : alert('Digite corretamente o seu CEP!!')}
-                    
-                    }}/>
+                <Textinput 
+                    placeholder="Somente números" 
+                    label='Digite o CEP:' 
+                    isnum 
+                    onChangeText={setCEP} 
+                />
+                <Button 
+                    placeholder='Consultar' 
+                    onClick={() => {
+                        // console.log('antes do botão', CEP);
+                        API(CEP);
+                    }} 
+                />
             </View>
         </View>
-    </>
-};
-
-
+    );
+}
 
 export default InsertData;
