@@ -14,22 +14,23 @@ function InsertData() {
         try {
             const response = await fetch('https://apifacil.dev/api/v1/guest/cep/' + cepPesq);
             const data = await response.json();
-            // console.log(data)
+            console.log(data)
             setDADOS(data);
         } catch (error) {
             console.error('Erro na chamada da API:', error);
         }
     }
-
+    
     useEffect(() => {
         if (DADOS) {
             // console.log('cade o erro porra',DADOS.error)
             // console.log(DADOS)
             if (DADOS.error === false) {
-                // console.log('passou')
                 navigation.navigate('ShowData', DADOS);
+            } else if (DADOS.error === true){
+                alert(`${DADOS.message}`);
             } else {
-                alert(`Digite corretamente o seu CEP!! Erro: ${DADOS.error}`);
+                alert('Algum erro inesperado ocorreu , tente novamente mais tarde!')
             }
         }
     }, [DADOS, navigation]);
